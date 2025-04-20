@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pastebin Password Unlocker</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input, button {
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    .output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pastebin Password Unlocker</h1>
+  <input type="text" id="pastebinLink" placeholder="Enter your Pastebin link here..." size="50"><br>
+  <button onclick="reveal()">Unlock</button>
+  <div class="output" id="output"></div>
+
+  <script>
+    function reveal() {
+      const link = document.getElementById("pastebinLink").value;
+      const output = document.getElementById("output");
+      
+      if (link.includes("pastebin.com")) {
+        output.textContent = "Password: 1234 (demo)";
+      } else {
+        output.textContent = "Invalid Pastebin link.";
+      }
+    }
+  </script>
+</body>
+</html>
